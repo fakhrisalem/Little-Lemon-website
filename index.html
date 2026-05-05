@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Lemon – Reserve a Table</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap"
+      rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <header class="nav" role="banner">
+      <div class="nav-inner">
+        <div class="logo" onclick="showPage('home')">
+          <div class="logo-mark"><span>LL</span></div>
+          <div class="logo-text"><span class="name">Little Lemon</span><span
+              class="city">Chicago</span></div>
+        </div>
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><span class="nav-link active" id="nav-home"
+                onclick="showPage('home')" tabindex="0" role="button"
+                aria-label="Go to Home page">Home</span></li>
+            <li><span class="nav-link" id="nav-booking"
+                onclick="showPage('booking')" tabindex="0" role="button"
+                aria-label="Go to Reservations page">Reserve a Table</span></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+
+      <!-- HOME PAGE -->
+      <div class="page active" id="page-home">
+
+        <section class="hero" aria-labelledby="hero-h1">
+          <div class="hero-inner">
+            <div>
+              <h1 id="hero-h1">Little Lemon</h1>
+              <h2>Chicago</h2>
+              <p>A family-owned Mediterranean restaurant, focused on traditional
+                recipes served with a modern twist.</p>
+              <button class="btn btn-y" onclick="showPage('booking')"
+                aria-label="Reserve a table at Little Lemon">Reserve a
+                Table</button>
+            </div>
+            <div class="hero-circle" aria-hidden="true">
+              <img src="./OIP (1).webp"
+                style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+          </div>
+        </section>
+
+        <div class="section">
+          <div class="section-header">
+            <h2>This Week's Specials!</h2>
+            <button class="btn btn-o" aria-label="View full online menu">Online
+              Menu</button>
+          </div>
+          <ul class="cards-grid" aria-label="Weekly specials">
+            <li class="card">
+              <div class="card-img" aria-hidden="true"><img src="./OIP (1).webp"
+                  alt="Greek Salad"><span class="badge">Salads</span></div>
+              <div class="card-body">
+                <div class="card-title-row"><span class="card-name">Greek
+                    Salad</span><span class="card-price">$12.99</span></div>
+                <p class="card-desc">Crispy lettuce, peppers, olives and
+                  Chicago-style feta cheese, garnished with crunchy garlic
+                  croutons.</p>
+                <span class="card-link" role="link"
+                  aria-label="Order Greek Salad for delivery">Order a delivery
+                  <img src="path/to/your/delivery-icon.png"
+                    alt="Delivery Icon"></span>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-img" aria-hidden="true"><img
+                  src="./green-lime-500x500.webp" alt="Bruschetta"><span
+                  class="badge">Starters</span></div>
+              <div class="card-body">
+                <div class="card-title-row"><span
+                    class="card-name">Bruschetta</span><span
+                    class="card-price">$5.99</span></div>
+                <p class="card-desc">Grilled bread smeared with garlic and
+                  seasoned with salt and olive oil, topped with fresh
+                  vegetables.</p>
+                <span class="card-link" role="link"
+                  aria-label="Order Bruschetta for delivery">Order a delivery
+                  <img src="path/to/your/delivery-icon.png"
+                    alt="Delivery Icon"></span>
+              </div>
+            </li>
+            <li class="card">
+              <div class="card-img" aria-hidden="true"><img
+                  src="./istockphoto-1323520334-170667a.jpg"
+                  alt="Lemon Dessert"><span class="badge">Desserts</span></div>
+              <div class="card-body">
+                <div class="card-title-row"><span class="card-name">Lemon
+                    Dessert</span><span class="card-price">$5.00</span></div>
+                <p class="card-desc">Straight from grandma's recipe book – every
+                  ingredient sourced and as authentic as it can be.</p>
+                <span class="card-link" role="link"
+                  aria-label="Order Lemon Dessert for delivery">Order a delivery
+                  <img src="path/to/your/delivery-icon.png"
+                    alt="Delivery Icon"></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="testimonials-bg">
+          <div class="section">
+            <h2 style="margin-bottom:1.5rem;">What Our Guests Say</h2>
+            <ul class="tgrid" aria-label="Customer testimonials">
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
+
+                </div><p
+                  class="ttext">"Absolutely the best Mediterranean food in Chicago. The Greek salad alone is worth the trip!"</p><div
+                  class="tauthor"><div class="avatar"
+                    aria-hidden="true">A</div><span
+                    class="tname">mona.</span></div></li>
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
+
+                </div><p
+                  class="ttext">"The online booking system is so easy to use. We had our anniversary dinner here and it was magical."</p><div
+                  class="tauthor"><div class="avatar"
+                    aria-hidden="true">M</div><span class="tname">rana
+                    .</span></div></li>
+              <li class="tcard"><div class="stars" aria-label="4 stars">★★★★☆
+
+                </div><p
+                  class="ttext">"Incredible flavors and wonderful service. The Lemon Dessert is a must-try. Definitely returning."</p><div
+                  class="tauthor"><div class="avatar"
+                    aria-hidden="true">S</div><span class="tname">Sofia
+                    .</span></div></li>
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
+
+                </div><p
+                  class="ttext">"Authentic recipes, cozy atmosphere, and the staff made us feel like family. My new favorite!"</p><div
+                  class="tauthor">
+                  <div class="avatar" aria-hidden="true">J</div><span
+                    class="tname">mostafa.</span></div></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!--  BOOKING PAGE -->
+      <div class="page" id="page-booking">
+        <div class="booking-hero" aria-labelledby="bk-h1">
+          <h1 id="bk-h1">Reserve a Table</h1>
+          <p>Book your perfect dining experience at Little Lemon. Choose your
+            date, time, and party size.</p>
+        </div>
+        <div class="booking-body">
+          <aside class="info-stack" aria-label="Restaurant information">
+            <div class="info-card">
+              <h3> Location</h3>
+              <p>123 Mediterranean Ave<br>Chicago, IL 60601</p>
+              <a href="#" aria-label="Get directions">Get Directions →</a>
+            </div>
+            <div class="info-card">
+              <h3> Hours</h3>
+              <div class="hours-row"><span>Mon–Thu</span><span>11am –
+                  10pm</span></div>
+              <div class="hours-row"><span>Fri–Sat</span><span>11am –
+                  11pm</span></div>
+              <div class="hours-row"><span>Sunday</span><span>12pm –
+                  9pm</span></div>
+            </div>
+            <div class="info-card">
+              <h3> Call Us</h3>
+              <a href="tel:+13125551234" aria-label="Call (312) 555-1234">(312)
+                555-1234</a>
+              <p style="margin-top:.4rem;">For parties over 20 or same-day
+                bookings, please call directly.</p>
+            </div>
+            <div class="info-card info-hl">
+              <h3> Instant Confirmation</h3>
+              <p>You'll receive a confirmation email right after booking.</p>
+            </div>
+          </aside>
+
+          <section class="form-wrap" aria-labelledby="form-h2">
+            <h2 class="form-title" id="form-h2">Your Reservation Details</h2>
+            <div id="server-err" class="server-err" role="alert"
+              aria-live="assertive" style="display:none;"></div>
+
+            <form id="booking-form" novalidate
+              aria-label="Table reservation form" onsubmit="submitForm(event)">
+
+              <!-- When -->
+              <div class="form-section" role="group" aria-labelledby="leg-when">
+                <span class="section-legend" id="leg-when"> When would you like
+                  to visit?</span>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="date">Date <span class="req"
+                        aria-label="required">*</span></label>
+                    <input type="date" id="date" name="date" required
+                      aria-required="true" aria-describedby="date-hint date-err"
+                      aria-invalid="false" onchange="onDateChange()"
+                      onblur="validateField('date')" />
+                    <span class="hint" id="date-hint">Up to 6 months in
+                      advance</span>
+                    <span class="err-msg" id="date-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="time">Time <span class="req"
+                        aria-label="required">*</span></label>
+                    <select id="time" name="time" required aria-required="true"
+                      aria-describedby="time-hint time-err" aria-invalid="false"
+                      disabled onblur="validateField('time')">
+                      <option value>Select a date first</option>
+                    </select>
+                    <span class="hint" id="time-hint">Available slots load after
+                      selecting a date</span>
+                    <span class="err-msg" id="time-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Party -->
+              <div class="form-section" role="group"
+                aria-labelledby="leg-party">
+                <span class="section-legend" id="leg-party">Party details</span>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="guests">Number of Guests <span class="req"
+                        aria-label="required">*</span></label>
+                    <input type="number" id="guests" name="guests" value="2"
+                      min="1" max="20" required aria-required="true"
+                      aria-describedby="guests-hint guests-err"
+                      aria-invalid="false" onblur="validateField('guests')" />
+                    <span class="hint" id="guests-hint">Between 1 and 20
+                      guests</span>
+                    <span class="err-msg" id="guests-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="occasion">Occasion <span class="req"
+                        aria-label="required">*</span></label>
+                    <select id="occasion" name="occasion" required
+                      aria-required="true" aria-describedby="occasion-err"
+                      aria-invalid="false" onblur="validateField('occasion')">
+                      <option value>— Select occasion —</option>
+                      <option>None / Standard Dining</option>
+                      <option>Birthday</option>
+                      <option>Anniversary</option>
+                      <option>Business Meal</option>
+                      <option>Date Night</option>
+                      <option>Graduation</option>
+                      <option>Other</option>
+                    </select>
+                    <span class="err-msg" id="occasion-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Seating Preference</label>
+                  <div class="seating-row" role="group"
+                    aria-label="Seating preference">
+                    <span class="chip sel" tabindex="0" role="radio"
+                      aria-checked="true" onclick="selectSeating(this)"
+                      onkeydown="chipKey(event,this)">Indoor</span>
+                    <span class="chip" tabindex="0" role="radio"
+                      aria-checked="false" onclick="selectSeating(this)"
+                      onkeydown="chipKey(event,this)">Outdoor</span>
+                    <span class="chip" tabindex="0" role="radio"
+                      aria-checked="false" onclick="selectSeating(this)"
+                      onkeydown="chipKey(event,this)">Bar</span>
+                    <span class="chip" tabindex="0" role="radio"
+                      aria-checked="false" onclick="selectSeating(this)"
+                      onkeydown="chipKey(event,this)">Private Dining</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Contact -->
+              <div class="form-section" role="group"
+                aria-labelledby="leg-contact">
+                <span class="section-legend" id="leg-contact"> Your contact
+                  information</span>
+                <div class="form-group">
+                  <label for="name">Full Name <span class="req"
+                      aria-label="required">*</span></label>
+                  <input type="text" id="name" name="name" autocomplete="name"
+                    required aria-required="true" aria-describedby="name-err"
+                    aria-invalid="false" placeholder="e.g. Maria Johnson"
+                    onblur="validateField('name')" />
+                  <span class="err-msg" id="name-err" role="alert"
+                    style="display:none;"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="email">Email Address <span class="req"
+                        aria-label="required">*</span></label>
+                    <input type="email" id="email" name="email"
+                      autocomplete="email" required aria-required="true"
+                      aria-describedby="email-err" aria-invalid="false"
+                      placeholder="e.g. maria@email.com"
+                      onblur="validateField('email')" />
+                    <span class="err-msg" id="email-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" autocomplete="tel"
+                      aria-describedby="phone-hint phone-err"
+                      aria-invalid="false" placeholder="e.g. (312) 555-0100"
+                      onblur="validateField('phone')" />
+                    <span class="hint" id="phone-hint">Optional</span>
+                    <span class="err-msg" id="phone-err" role="alert"
+                      style="display:none;"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="special">Special Requests or Dietary
+                    Requirements</label>
+                  <textarea id="special" name="special" rows="3" maxlength="500"
+                    placeholder="e.g. gluten-free menu, high chair needed, window table…"
+                    aria-describedby="special-hint"
+                    oninput="updateCharCount()"></textarea>
+                  <span class="hint" id="special-hint"><span
+                      id="char-count">500</span> characters remaining</span>
+                </div>
+              </div>
+
+              <p class="req-note"><span class="req">*</span> Required fields</p>
+              <button type="submit" class="submit-btn" id="submit-btn"
+                aria-label="Confirm your table reservation">Reserve My
+                Table</button>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <!-- CONFIRMATION PAGE -->
+      <div class="page" id="page-confirm">
+        <div class="confirm-page">
+          <div class="confirm-inner">
+            <div class="confirm-header" role="status" aria-live="polite">
+              <span class="confirm-icon" aria-hidden="true">✅</span>
+              <h1>You're all set!</h1>
+              <p>Your table at Little Lemon has been reserved. We look forward
+                to seeing you!</p>
+            </div>
+            <div class="confirm-card" aria-label="Booking confirmation details">
+              <div class="confirm-top">
+                <div>
+                  <p class="confirm-restaurant">Little Lemon – Chicago</p>
+                  <p class="confirm-num">Confirmation #<strong
+                      id="conf-num"></strong></p>
+                </div>
+                <span class="confirmed-badge"
+                  aria-label="Status: Confirmed">Confirmed</span>
+              </div>
+              <div class="divider"></div>
+              <dl class="details-grid" id="conf-details"></dl>
+              <div class="divider"></div>
+              <p class="confirm-note"> A confirmation email has been sent to
+                <strong id="conf-email"></strong>. To modify or cancel, call us
+                at <a href="tel:+13125551234"
+                  aria-label="Call (312) 555-1234">(312) 555-1234</a>.</p>
+            </div>
+            <div class="confirm-actions">
+              <button class="btn btn-y" onclick="showPage('home')"
+                aria-label="Return to Home page">Back to Home</button>
+              <button class="btn btn-o" onclick="newReservation()"
+                aria-label="Make another reservation">Make Another
+                Reservation</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <script src="script.js">
+
+</script>
+  </body>
+</html>
