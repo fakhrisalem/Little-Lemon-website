@@ -1,155 +1,133 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Little Lemon – Reserve a Table</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;700&family=Karla:wght@400;500;600;700&display=swap"
-      rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" />
+    <meta name="theme-color" content="#294d40" />
+    <meta name="description" content="Little Lemon, Chicago: freshly squeezed lemon juice, lemonades and mint-lime coolers made with real fruit." />
+    <title>Little Lemon — Fresh Lemon Juice Bar, Chicago</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500;600;700&family=Markazi+Text:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- NAV -->
     <header class="nav" role="banner">
       <div class="nav-inner">
-        <div class="logo" onclick="showPage('home')">
-          <div class="logo-mark"><span>LL</span></div>
-          <div class="logo-text"><span class="name">Little Lemon</span><span
-              class="city">Chicago</span></div>
-        </div>
-        <nav aria-label="Main navigation">
+        <button class="brand" type="button" onclick="showPage('home')" aria-label="Little Lemon home">
+          <span class="logo-mark" aria-hidden="true"><span>LL</span><i></i></span>
+          <span class="logo-text"><span class="name">Little Lemon</span><span class="city">Chicago · Est. with love</span></span>
+        </button>
+
+        <nav class="nav-panel" id="site-nav" aria-label="Main navigation">
           <ul class="nav-links">
-            <li><span class="nav-link active" id="nav-home"
-                onclick="showPage('home')" tabindex="0" role="button"
-                aria-label="Go to Home page">Home</span></li>
-            <li><span class="nav-link" id="nav-booking"
-                onclick="showPage('booking')" tabindex="0" role="button"
-                aria-label="Go to Reservations page">Reserve a Table</span></li>
+            <li><button class="nav-link active" id="nav-home" type="button" onclick="showPage('home')">Home</button></li>
+            <li><button class="nav-link" id="nav-menu" type="button" onclick="showSection('drinks')">The drinks</button></li>
+            <li><button class="nav-link" id="nav-story" type="button" onclick="showSection('story')">Our story</button></li>
+            <li><button class="nav-link" id="nav-contact" type="button" onclick="showPage('contact')">Contact</button></li>
+            <li><button class="nav-link nav-reserve" id="nav-booking" type="button" onclick="showPage('booking')">Reserve a table</button></li>
           </ul>
         </nav>
+
+        <div class="nav-actions">
+          <button class="bag-button" id="cart-toggle" type="button" onclick="openCart()" aria-label="Open your drink bag, 0 items">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8h14l1 12H4L5 8Z"/><path d="M9 9V6a3 3 0 0 1 6 0v3"/></svg>
+            <span>Bag</span><span class="bag-count" id="cart-count">0</span>
+          </button>
+          <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-controls="site-nav" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
       </div>
     </header>
 
     <main id="main">
-
-      <!-- HOME PAGE -->
       <div class="page active" id="page-home">
-
-        <section class="hero" aria-labelledby="hero-h1">
+        <section class="hero" id="home" aria-labelledby="hero-title">
           <div class="hero-inner">
-            <div>
-              <h1 id="hero-h1">Little Lemon</h1>
-              <h2>Chicago</h2>
-              <p>A family-owned Mediterranean restaurant, focused on traditional
-                recipes served with a modern twist.</p>
-              <button class="btn btn-y" onclick="showPage('booking')"
-                aria-label="Reserve a table at Little Lemon">Reserve a
-                Table</button>
+            <div class="hero-copy">
+              <p class="eyebrow"><span class="eyebrow-dot"></span> Squeezed fresh in Chicago</p>
+              <h1 id="hero-title">A little sunshine<br /><em>in every sip.</em></h1>
+              <p class="hero-lede">Freshly squeezed lemon juice, cool lemonades and minty limeades — made with real fruit and a generous squeeze of joy.</p>
+              <div class="hero-actions">
+                <button class="btn btn-primary" type="button" onclick="showSection('drinks')">Explore the drinks <span aria-hidden="true">↗</span></button>
+                <button class="btn btn-text" type="button" onclick="showPage('booking')">Save me a table <span aria-hidden="true">→</span></button>
+              </div>
+              <div class="hero-proof"><span class="proof-icon" aria-hidden="true">✳</span><span>Freshly made · Happily shared</span></div>
             </div>
-            <div class="hero-circle" aria-hidden="true">
-              <img src="./OIP (1).webp"
-                style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            <div class="hero-visual">
+              <img src="./assets/little-lemon-hero.webp" alt="A mint lemon cooler and fresh lemonade in clear glasses with lemon slices" fetchpriority="high" />
+              <div class="hero-sticker"><span>Real fruit</span><strong>Real fresh</strong></div>
+              <p class="hero-photo-note"><span></span> A brighter kind of break</p>
             </div>
+          </div>
+          <div class="hero-bottomline"><span>Good food. Good company. Good things to sip.</span><span>Chicago, Illinois <b>✳</b></span></div>
+        </section>
+
+        <section class="promise-strip" aria-label="What makes Little Lemon special">
+          <div class="promise-item"><span class="promise-mark">01</span><p><strong>Freshly squeezed</strong><span>Bright citrus, every day</span></p></div>
+          <div class="promise-item"><span class="promise-mark">02</span><p><strong>Made with care</strong><span>Simple, lovely ingredients</span></p></div>
+          <div class="promise-item"><span class="promise-mark">03</span><p><strong>Made for sharing</strong><span>A seat is always waiting</span></p></div>
+        </section>
+
+        <section class="drinks-section" id="drinks" aria-labelledby="drinks-title">
+          <div class="section drinks-inner">
+            <div class="section-heading drinks-heading">
+              <div><p class="eyebrow"><span class="eyebrow-dot"></span> The citrus bar</p><h2 id="drinks-title">A sip for <em>every mood.</em></h2><p class="section-lede">Four ways to enjoy lemon: pure, sparkling, minty or sweetly limed.</p></div>
+              <p class="menu-note"><span aria-hidden="true">✳</span> Served chilled, made fresh</p>
+            </div>
+            <div class="filter-row" role="group" aria-label="Filter drinks by type">
+              <button class="filter-chip is-selected" type="button" data-filter="all" aria-pressed="true">All juices</button>
+              <button class="filter-chip" type="button" data-filter="lemon" aria-pressed="false">Lemon</button>
+              <button class="filter-chip" type="button" data-filter="lime" aria-pressed="false">Lime &amp; mint</button>
+            </div>
+            <ul class="product-grid" id="product-grid" aria-label="Little Lemon drinks">
+              <li class="product-card" data-category="lemon">
+                <div class="product-media"><img src="./assets/fresh-lemonade.webp" alt="Fresh lemonade with ice, a lemon wheel and mint" loading="lazy" /><span class="product-tag">Lemon juice</span><span class="product-number">01</span></div>
+                <div class="product-info"><div class="product-title-row"><div><h3>Garden Lemonade</h3><p>Lemon · mint · a little sparkle</p></div><span class="product-price">$5.50</span></div><button class="add-button" type="button" data-add-to-cart data-name="Garden Lemonade" data-price="5.50"><span>Add to bag</span><span aria-hidden="true">＋</span></button></div>
+              </li>
+              <li class="product-card" data-category="lime">
+                <div class="product-media"><img src="./assets/mojito.webp" alt="Sparkling lime and mint cooler over crushed ice" loading="lazy" /><span class="product-tag">Lime &amp; mint</span><span class="product-number">02</span></div>
+                <div class="product-info"><div class="product-title-row"><div><h3>Minty Lime Cooler</h3><p>Lime · mint · bubbles</p></div><span class="product-price">$6.00</span></div><button class="add-button" type="button" data-add-to-cart data-name="Minty Lime Cooler" data-price="6.00"><span>Add to bag</span><span aria-hidden="true">＋</span></button></div>
+              </li>
+              <li class="product-card" data-category="lemon">
+                <div class="product-media"><img src="./assets/pure-lemon-juice.webp" alt="Pure lemon juice over ice with a lemon wheel and mint" loading="lazy" /><span class="product-tag">Lemon juice</span><span class="product-number">03</span></div>
+                <div class="product-info"><div class="product-title-row"><div><h3>Pure Lemon Juice</h3><p>Just-squeezed lemons over ice, lightly sweet</p></div><span class="product-price">$4.50</span></div><button class="add-button" type="button" data-add-to-cart data-name="Pure Lemon Juice" data-price="4.50"><span>Add to bag</span><span aria-hidden="true">＋</span></button></div>
+              </li>
+              <li class="product-card" data-category="lime">
+                <div class="product-media"><img src="./assets/lime-mint-crush.webp" alt="Lime and mint crush over crushed ice" loading="lazy" /><span class="product-tag">Lime &amp; mint</span><span class="product-number">04</span></div>
+                <div class="product-info"><div class="product-title-row"><div><h3>Crushed Lime &amp; Mint</h3><p>Lime · crushed mint · crushed ice</p></div><span class="product-price">$5.00</span></div><button class="add-button" type="button" data-add-to-cart data-name="Crushed Lime &amp; Mint" data-price="5.00"><span>Add to bag</span><span aria-hidden="true">＋</span></button></div>
+              </li>
+            </ul>
+            <div class="menu-list" aria-label="More lemon juices"><h3 class="menu-list-title">More ways to drink lemon</h3><div class="menu-cols"><div class="menu-col"><h3>Classic lemon</h3><ul><li class="menu-item"><div><strong>Fresh Lemonade</strong><span>Lemon, cold water, a little sugar</span></div><b>$4.00</b><button class="menu-add" type="button" data-add-to-cart data-name="Fresh Lemonade" data-price="4.00" aria-label="Add Fresh Lemonade to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Honey</strong><span>Warm honey, soft and smooth</span></div><b>$5.00</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Honey" data-price="5.00" aria-label="Add Lemon &amp; Honey to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Ginger</strong><span>Zesty with a gentle kick</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Ginger" data-price="5.50" aria-label="Add Lemon &amp; Ginger to bag">＋</button></li><li class="menu-item"><div><strong>Salted Lemonade</strong><span>Lemon with a pinch of sea salt</span></div><b>$4.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Salted Lemonade" data-price="4.50" aria-label="Add Salted Lemonade to bag">＋</button></li></ul></div><div class="menu-col"><h3>Sparkling &amp; minty</h3><ul><li class="menu-item"><div><strong>Sparkling Lemonade</strong><span>Lemon juice topped with soda</span></div><b>$5.00</b><button class="menu-add" type="button" data-add-to-cart data-name="Sparkling Lemonade" data-price="5.00" aria-label="Add Sparkling Lemonade to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Mint</strong><span>Cool and garden-fresh</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Mint" data-price="5.50" aria-label="Add Lemon &amp; Mint to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Cucumber</strong><span>Light, crisp and clean</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Cucumber" data-price="5.50" aria-label="Add Lemon &amp; Cucumber to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Lime Fizz</strong><span>Two citrus, one bright glass</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Lime Fizz" data-price="5.50" aria-label="Add Lemon &amp; Lime Fizz to bag">＋</button></li></ul></div><div class="menu-col"><h3>Frozen &amp; iced</h3><ul><li class="menu-item"><div><strong>Frozen Lemonade</strong><span>Blended with ice until slushy</span></div><b>$6.00</b><button class="menu-add" type="button" data-add-to-cart data-name="Frozen Lemonade" data-price="6.00" aria-label="Add Frozen Lemonade to bag">＋</button></li><li class="menu-item"><div><strong>Lemon Slush</strong><span>Shaved ice, lemon syrup, fresh juice</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon Slush" data-price="5.50" aria-label="Add Lemon Slush to bag">＋</button></li><li class="menu-item"><div><strong>Lemon Ice Cooler</strong><span>Crushed ice and lemon juice</span></div><b>$5.00</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon Ice Cooler" data-price="5.00" aria-label="Add Lemon Ice Cooler to bag">＋</button></li><li class="menu-item"><div><strong>Lemon &amp; Basil</strong><span>Fresh basil over iced lemon</span></div><b>$5.50</b><button class="menu-add" type="button" data-add-to-cart data-name="Lemon &amp; Basil" data-price="5.50" aria-label="Add Lemon &amp; Basil to bag">＋</button></li></ul></div></div></div>
+            <div class="flavour-footer"><span>Find your flavour</span><div class="flavour-pills"><span>Lemon</span><span>Lime</span><span>Garden mint</span><span>Honey</span></div><button class="text-link" type="button" onclick="openCart()">Your bag <span aria-hidden="true">→</span></button></div>
           </div>
         </section>
 
-        <div class="section">
-          <div class="section-header">
-            <h2>This Week's Specials!</h2>
-            <button class="btn btn-o" aria-label="View full online menu">Online
-              Menu</button>
+        <section class="story-section" id="story" aria-labelledby="story-title">
+          <div class="section story-inner">
+            <div class="story-photo-wrap"><img src="./assets/user-supplied/lemon.webp" alt="Fresh lemons with bright yellow citrus flesh and green leaves" loading="lazy" /><span class="story-photo-label">A little zest goes a long way</span><span class="story-orbit" aria-hidden="true">✳</span></div>
+            <div class="story-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> A little about us</p><h2 id="story-title">Squeezed from <em>real lemons.</em></h2><p>We’re a family-owned Chicago spot with one simple idea: great lemon juice. We squeeze every glass to order, using ripe lemons and limes, fresh mint and just enough sweetness.</p><p>Stop by for something cool and citrusy, and stay as long as you like.</p><button class="btn btn-primary" type="button" onclick="showPage('booking')">Come on in <span aria-hidden="true">↗</span></button></div>
           </div>
-          <ul class="cards-grid" aria-label="Weekly specials">
-            <li class="card">
-              <div class="card-img" aria-hidden="true"><img src="./OIP (1).webp"
-                  alt="Greek Salad"><span class="badge">Salads</span></div>
-              <div class="card-body">
-                <div class="card-title-row"><span class="card-name">Greek
-                    Salad</span><span class="card-price">$12.99</span></div>
-                <p class="card-desc">Crispy lettuce, peppers, olives and
-                  Chicago-style feta cheese, garnished with crunchy garlic
-                  croutons.</p>
-                <span class="card-link" role="link"
-                  aria-label="Order Greek Salad for delivery">Order a delivery
-                  <img src="path/to/your/delivery-icon.png"
-                    alt="Delivery Icon"></span>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card-img" aria-hidden="true"><img
-                  src="./green-lime-500x500.webp" alt="Bruschetta"><span
-                  class="badge">Starters</span></div>
-              <div class="card-body">
-                <div class="card-title-row"><span
-                    class="card-name">Bruschetta</span><span
-                    class="card-price">$5.99</span></div>
-                <p class="card-desc">Grilled bread smeared with garlic and
-                  seasoned with salt and olive oil, topped with fresh
-                  vegetables.</p>
-                <span class="card-link" role="link"
-                  aria-label="Order Bruschetta for delivery">Order a delivery
-                  <img src="path/to/your/delivery-icon.png"
-                    alt="Delivery Icon"></span>
-              </div>
-            </li>
-            <li class="card">
-              <div class="card-img" aria-hidden="true"><img
-                  src="./istockphoto-1323520334-170667a.jpg"
-                  alt="Lemon Dessert"><span class="badge">Desserts</span></div>
-              <div class="card-body">
-                <div class="card-title-row"><span class="card-name">Lemon
-                    Dessert</span><span class="card-price">$5.00</span></div>
-                <p class="card-desc">Straight from grandma's recipe book – every
-                  ingredient sourced and as authentic as it can be.</p>
-                <span class="card-link" role="link"
-                  aria-label="Order Lemon Dessert for delivery">Order a delivery
-                  <img src="path/to/your/delivery-icon.png"
-                    alt="Delivery Icon"></span>
-              </div>
-            </li>
-          </ul>
-        </div>
+        </section>
 
-        <div class="testimonials-bg">
-          <div class="section">
-            <h2 style="margin-bottom:1.5rem;">What Our Guests Say</h2>
-            <ul class="tgrid" aria-label="Customer testimonials">
-              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
-
-                </div><p
-                  class="ttext">"Absolutely the best Mediterranean food in Chicago. The Greek salad alone is worth the trip!"</p><div
-                  class="tauthor"><div class="avatar"
-                    aria-hidden="true">A</div><span
-                    class="tname">mona.</span></div></li>
-              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
-
-                </div><p
-                  class="ttext">"The online booking system is so easy to use. We had our anniversary dinner here and it was magical."</p><div
-                  class="tauthor"><div class="avatar"
-                    aria-hidden="true">M</div><span class="tname">rana
-                    .</span></div></li>
-              <li class="tcard"><div class="stars" aria-label="4 stars">★★★★☆
-
-                </div><p
-                  class="ttext">"Incredible flavors and wonderful service. The Lemon Dessert is a must-try. Definitely returning."</p><div
-                  class="tauthor"><div class="avatar"
-                    aria-hidden="true">S</div><span class="tname">Sofia
-                    .</span></div></li>
-              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★
-
-                </div><p
-                  class="ttext">"Authentic recipes, cozy atmosphere, and the staff made us feel like family. My new favorite!"</p><div
-                  class="tauthor">
-                  <div class="avatar" aria-hidden="true">J</div><span
-                    class="tname">mostafa.</span></div></li>
+        <section class="testimonials-bg" id="reviews" aria-labelledby="reviews-title">
+          <div class="section reviews-section">
+            <div class="section-heading reviews-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> Kind words from our guests</p><h2 id="reviews-title">Good things are <em>shared.</em></h2></div><span class="review-rating"><strong>4.8</strong><span>★★★★★<small>Guest favourites</small></span></span></div>
+            <ul class="tgrid" aria-label="Guest testimonials">
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★</div><p class="ttext">“Absolutely the best lemonade in Chicago. You can taste the real lemons in every sip!”</p><div class="tauthor"><span class="avatar" aria-hidden="true">M</span><span class="tname">Mona A.<small>Little Lemon guest</small></span></div></li>
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★</div><p class="ttext">“The online booking system is so easy to use. We had our anniversary dinner here and it was magical.”</p><div class="tauthor"><span class="avatar avatar-peach" aria-hidden="true">R</span><span class="tname">Rana H.<small>Little Lemon guest</small></span></div></li>
+              <li class="tcard"><div class="stars" aria-label="4 stars">★★★★☆</div><p class="ttext">“Incredible flavours and wonderful service. The Minty Lime Cooler is a must-try. Definitely returning.”</p><div class="tauthor"><span class="avatar avatar-yellow" aria-hidden="true">S</span><span class="tname">Sofia M.<small>Little Lemon guest</small></span></div></li>
+              <li class="tcard"><div class="stars" aria-label="5 stars">★★★★★</div><p class="ttext">“Fresh ingredients, a cozy atmosphere, and the staff made us feel like family. My new favourite!”</p><div class="tauthor"><span class="avatar avatar-sage" aria-hidden="true">J</span><span class="tname">Jordan P.<small>Little Lemon guest</small></span></div></li>
             </ul>
           </div>
-        </div>
+        </section>
+
+        <section class="closing-cta" aria-labelledby="closing-title"><div class="closing-inner"><span class="closing-spark" aria-hidden="true">✳</span><div><p class="eyebrow">Your table is waiting</p><h2 id="closing-title">Make it a <em>Little Lemon</em> day.</h2></div><button class="btn btn-light" type="button" onclick="showPage('booking')">Reserve a table <span aria-hidden="true">↗</span></button></div></section>
       </div>
 
-      <!--  BOOKING PAGE -->
       <div class="page" id="page-booking">
         <div class="booking-hero" aria-labelledby="bk-h1">
           <h1 id="bk-h1">Reserve a Table</h1>
@@ -161,7 +139,7 @@
             <div class="info-card">
               <h3> Location</h3>
               <p>123 Mediterranean Ave<br>Chicago, IL 60601</p>
-              <a href="#" aria-label="Get directions">Get Directions →</a>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=123+Mediterranean+Ave+Chicago+IL+60601" target="_blank" rel="noopener" aria-label="Get directions">Get Directions →</a>
             </div>
             <div class="info-card">
               <h3> Hours</h3>
@@ -193,7 +171,6 @@
             <form id="booking-form" novalidate
               aria-label="Table reservation form" onsubmit="submitForm(event)">
 
-              <!-- When -->
               <div class="form-section" role="group" aria-labelledby="leg-when">
                 <span class="section-legend" id="leg-when"> When would you like
                   to visit?</span>
@@ -226,7 +203,6 @@
                 </div>
               </div>
 
-              <!-- Party -->
               <div class="form-section" role="group"
                 aria-labelledby="leg-party">
                 <span class="section-legend" id="leg-party">Party details</span>
@@ -282,7 +258,6 @@
                 </div>
               </div>
 
-              <!-- Contact -->
               <div class="form-section" role="group"
                 aria-labelledby="leg-contact">
                 <span class="section-legend" id="leg-contact"> Your contact
@@ -340,8 +315,94 @@
           </section>
         </div>
       </div>
+      <div class="page" id="page-contact">
+        <div class="booking-hero" aria-labelledby="ct-h1">
+          <h1 id="ct-h1">Contact Us</h1>
+          <p>Questions, feedback or a big order? Send us a message and we’ll get back to you within one working day.</p>
+        </div>
+        <div class="booking-body">
+          <aside class="info-stack" aria-label="Contact information">
+            <div class="info-card">
+              <h3>Call us</h3>
+              <a href="tel:+13125551234">(312) 555-1234</a>
+              <p>Daily during opening hours.</p>
+            </div>
+            <div class="info-card">
+              <h3>Email</h3>
+              <a href="mailto:hello@littlelemon.com">hello@littlelemon.com</a>
+              <p>We reply within one working day.</p>
+            </div>
+            <div class="info-card">
+              <h3>Find us</h3>
+              <p>123 Mediterranean Ave<br>Chicago, IL 60601</p>
+              <a href="https://www.google.com/maps/search/?api=1&amp;query=123+Mediterranean+Ave+Chicago+IL+60601" target="_blank" rel="noopener">Get directions →</a>
+            </div>
+            <div class="info-card">
+              <h3>Hours</h3>
+              <div class="hours-row"><span>Mon–Thu</span><span>11am – 10pm</span></div>
+              <div class="hours-row"><span>Fri–Sat</span><span>11am – 11pm</span></div>
+              <div class="hours-row"><span>Sunday</span><span>12pm – 9pm</span></div>
+            </div>
+          </aside>
 
-      <!-- CONFIRMATION PAGE -->
+          <section class="form-wrap" aria-labelledby="ct-form-h2">
+            <div id="contact-success" class="contact-success" role="status" aria-live="polite" hidden>
+              <span class="confirm-icon" aria-hidden="true">✅</span>
+              <h2>Message sent!</h2>
+              <p>Thank you, <strong id="contact-sent-name"></strong>. We’ll reply to <strong id="contact-sent-email"></strong> soon.</p>
+              <button class="btn btn-outline" type="button" onclick="newMessage()">Send another message</button>
+            </div>
+            <div id="contact-form-wrap">
+              <h2 class="form-title" id="ct-form-h2">Send us a message</h2>
+              <form id="contact-form" novalidate aria-label="Contact form" onsubmit="submitContact(event)">
+                <div class="form-section">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="c-name">Full Name <span class="req" aria-label="required">*</span></label>
+                      <input type="text" id="c-name" autocomplete="name" required aria-required="true" aria-describedby="c-name-err" aria-invalid="false" placeholder="e.g. Maria Johnson" onblur="validateContact('c-name')" />
+                      <span class="err-msg" id="c-name-err" role="alert" style="display:none;"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="c-email">Email Address <span class="req" aria-label="required">*</span></label>
+                      <input type="email" id="c-email" autocomplete="email" required aria-required="true" aria-describedby="c-email-err" aria-invalid="false" placeholder="e.g. maria@email.com" onblur="validateContact('c-email')" />
+                      <span class="err-msg" id="c-email-err" role="alert" style="display:none;"></span>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label for="c-phone">Phone Number</label>
+                      <input type="tel" id="c-phone" autocomplete="tel" aria-describedby="c-phone-hint c-phone-err" aria-invalid="false" placeholder="e.g. (312) 555-0100" onblur="validateContact('c-phone')" />
+                      <span class="hint" id="c-phone-hint">Optional</span>
+                      <span class="err-msg" id="c-phone-err" role="alert" style="display:none;"></span>
+                    </div>
+                    <div class="form-group">
+                      <label for="c-subject">Topic <span class="req" aria-label="required">*</span></label>
+                      <select id="c-subject" required aria-required="true" aria-describedby="c-subject-err" aria-invalid="false" onblur="validateContact('c-subject')">
+                        <option value="">— Select a topic —</option>
+                        <option>General question</option>
+                        <option>My order</option>
+                        <option>Feedback</option>
+                        <option>Events &amp; large orders</option>
+                        <option>Other</option>
+                      </select>
+                      <span class="err-msg" id="c-subject-err" role="alert" style="display:none;"></span>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="c-message">Your Message <span class="req" aria-label="required">*</span></label>
+                    <textarea id="c-message" rows="5" maxlength="1000" required aria-required="true" aria-describedby="c-message-hint c-message-err" aria-invalid="false" placeholder="How can we help?" oninput="updateContactCount()" onblur="validateContact('c-message')"></textarea>
+                    <span class="hint" id="c-message-hint"><span id="c-count">1000</span> characters remaining</span>
+                    <span class="err-msg" id="c-message-err" role="alert" style="display:none;"></span>
+                  </div>
+                </div>
+                <p class="req-note"><span class="req">*</span> Required fields</p>
+                <button type="submit" class="submit-btn" id="contact-btn">Send Message</button>
+              </form>
+            </div>
+          </section>
+        </div>
+      </div>
+
       <div class="page" id="page-confirm">
         <div class="confirm-page">
           <div class="confirm-inner">
@@ -370,20 +431,36 @@
                   aria-label="Call (312) 555-1234">(312) 555-1234</a>.</p>
             </div>
             <div class="confirm-actions">
-              <button class="btn btn-y" onclick="showPage('home')"
+              <button class="btn btn-primary" onclick="showPage('home')"
                 aria-label="Return to Home page">Back to Home</button>
-              <button class="btn btn-o" onclick="newReservation()"
+              <button class="btn btn-outline" onclick="newReservation()"
                 aria-label="Make another reservation">Make Another
                 Reservation</button>
             </div>
           </div>
         </div>
       </div>
-
     </main>
 
-    <script src="script.js">
+    <footer class="site-footer">
+      <div class="footer-main">
+        <div class="footer-brand"><span class="logo-mark" aria-hidden="true"><span>LL</span><i></i></span><div><span class="footer-name">Little Lemon</span><span class="footer-city">Chicago · Fresh lemon juice bar</span></div><p>Fresh lemons, familiar faces, and something lovely to sip.</p></div>
+        <div class="footer-column"><h2>Explore</h2><button type="button" onclick="showPage('home')">Home</button><button type="button" onclick="showSection('drinks')">The citrus bar</button><button type="button" onclick="showSection('reviews')">Guest notes</button><button type="button" onclick="showPage(\'contact\')">Contact us</button></div>
+        <div class="footer-column"><h2>Come by</h2><p>123 Mediterranean Ave<br />Chicago, IL 60601</p><a href="tel:+13125551234">(312) 555-1234</a><button type="button" onclick="showPage('booking')">Reserve a table</button></div>
+        <div class="footer-note"><span class="footer-sun" aria-hidden="true">☼</span><p>Something fresh is always<br />just around the corner.</p></div>
+      </div>
+      <div class="footer-bottom"><span>© Little Lemon, Chicago</span><span>Freshly made. Happily shared. <b>✳</b></span></div>
+    </footer>
 
-</script>
+    <div class="cart-overlay" id="cart-overlay" hidden aria-hidden="true">
+      <aside class="cart-panel" role="dialog" aria-modal="true" aria-labelledby="cart-title" tabindex="-1">
+        <div class="cart-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> A little something</p><h2 id="cart-title">Your drink bag</h2></div><button class="cart-close" id="cart-close" type="button" aria-label="Close drink bag">×</button></div>
+        <div class="cart-items" id="cart-items"><p class="cart-empty">Your bag is still empty. Find a sip you love and add it here.</p></div>
+        <div class="cart-summary" id="cart-summary" hidden><div class="cart-subtotal"><span>Subtotal</span><strong id="cart-subtotal">$0.00</strong></div><p>Give us a call and we’ll help with your order.</p><a class="btn btn-primary call-order" href="tel:+13125551234">Call to place your order <span aria-hidden="true">↗</span></a><small>Online payment and delivery aren’t connected in this demo.</small></div>
+      </aside>
+    </div>
+    <div class="cart-toast" id="cart-toast" role="status" aria-live="polite"></div>
+
+    <script src="./script.js" defer></script>
   </body>
 </html>
